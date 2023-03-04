@@ -1,17 +1,19 @@
 //desafio : 
 //Crear una clase que se llame Product Manager ,debe crearse desde su constructor con el elemento products el cual sera un array vacio,debe crearse un array y este array debe tener title,description,price,thumbail,code,stock
-//va a tener 4 metodos,add products ,para agregar productos ,getProducts para mostrar todo el array y getProductsById,en el caso de no mostrar nada poner Not Found
+//va a tener 4 metodos,add products ,para agregar productos ,getProducts para mostgetProductsByIdrar todo el array y ,en el caso de no mostrar nada poner Not Found
 class ProductManager {
+    
     constructor(){
        this.products = [];
-       this.id = 1
+        this.id = 1
+        
     }
 
     getProducts = ()=>  this.products
 
-    addProducts = (id,title,description,price,thumbail,code,stock=7)=>{
+    addProducts = (title,description,price,thumbail,code,stock=7)=>{
             const product = {
-                id ,
+                id : this.getProductsById(this.id++),
                 title ,
                 description,
                 price,
@@ -22,7 +24,7 @@ class ProductManager {
             
 
             if(this.products.length === 0){
-                this.products.id 
+                this.products.id
             }else{
                 products.id = this.products[this.products.length -1].id 
             }
@@ -31,7 +33,7 @@ class ProductManager {
     getProductsById = ()=>{
         const result = this.products.find((products) => products.id === newProduct.id)
         if (result) {
-            return this.products.id
+            return this.products.id 
         }else{
             'Not Found'
         }
@@ -39,10 +41,10 @@ class ProductManager {
 
 }
 const newProduct = new ProductManager()
-newProduct.addProducts(1,"Tomate" , "fruta roja y versatil al comer" , "300 el kilo" , "Sin imagen" , "t1")
+newProduct.addProducts("Tomate" , "fruta roja y versatil al comer" , "300 el kilo" , "Sin imagen" , "t1")
 newProduct.getProductsById(1)
 console.log(newProduct);
 const newProduct2 = new ProductManager()
-newProduct2.addProducts(2,"cebolla","Verdura verde y de buen comer" , "150 el kilo" , "sin imagen" , "c1")
+newProduct2.addProducts("cebolla","Verdura verde y de buen comer" , "150 el kilo" , "sin imagen" , "c1")
 newProduct2.getProductsById(2)
 console.log(newProduct2);
