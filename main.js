@@ -8,9 +8,9 @@ class ProductManager {
 
     getProducts = ()=>  this.products
 
-    addProducts = (title,description,price,thumbail,code,stock=7)=>{
+    addProducts = (id,title,description,price,thumbail,code,stock=7)=>{
             const product = {
-                
+                id,
                 title ,
                 description,
                 price,
@@ -20,9 +20,9 @@ class ProductManager {
             }
 
             if(this.products.length === 0){
-                this.products.id = 1
+                this.products.id 
             }else{
-                products.id = this.products[this.products.length -1].id +1
+                products.id = this.products[this.products.length -1].id 
             }
             this.products.push(product)
     }
@@ -37,6 +37,10 @@ class ProductManager {
 
 }
 const newProduct = new ProductManager()
-newProduct.addProducts("Tomate" , "fruta roja y versatil al comer" , "300 el kilo" , "Sin imagen" , "t1")
+newProduct.addProducts(1,"Tomate" , "fruta roja y versatil al comer" , "300 el kilo" , "Sin imagen" , "t1")
 newProduct.getProductsById(1)
 console.log(newProduct);
+const newProduct2 = new ProductManager()
+newProduct2.addProducts(2,"cebolla","Verdura verde y de buen comer" , "150 el kilo" , "sin imagen" , "c1")
+newProduct2.getProductsById(2)
+console.log(newProduct2);
