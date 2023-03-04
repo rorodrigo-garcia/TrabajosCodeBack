@@ -4,13 +4,14 @@
 class ProductManager {
     constructor(){
        this.products = [];
+       this.id = 1
     }
 
     getProducts = ()=>  this.products
 
     addProducts = (id,title,description,price,thumbail,code,stock=7)=>{
             const product = {
-                id,
+                id ,
                 title ,
                 description,
                 price,
@@ -18,6 +19,7 @@ class ProductManager {
                 code,
                 stock
             }
+            
 
             if(this.products.length === 0){
                 this.products.id 
